@@ -64,8 +64,8 @@ window.addEventListener('load', function(){
                 languages: {
                     'en': {
                         consent_modal: {
-                            title: 'Your privacy preferences',
-                            description: 'This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
+                            title: 'Privacy preferences',
+                            description: 'This site uses essential cookies for its operation and tracking cookies to enhance your experience. Tracking cookies will be activated only with your consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
                             primary_btn: {
                                 text: 'Accept all',
                                 role: 'accept_all'              // 'accept_selected' or 'accept_all'
@@ -97,7 +97,7 @@ window.addEventListener('load', function(){
                                     }
                                 }, {
                                     title: 'Performance and Analytics cookies',
-                                    description: 'Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br/><br/><strong>Google Tag Manager (Google Inc.)</strong> | Usage data<br/><br/><strong>Google Analytics (Google Inc.)</strong> | Usage data<br/><br/><strong>Smeetz.com (Smeetz SA)</strong> | Usage data, ticket purchasing activities',
+                                    description: 'Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br/>By not consenting to the use of Performance and Analytics cookies, some features of the site may not work properly.<br/><br/><strong>Google Tag Manager (Google Inc.)</strong> | Usage data<br/><br/><strong>Google Analytics (Google Inc.)</strong> | Usage data<br/><br/><strong>Smeetz.com (Smeetz SA)</strong> | Usage data, ticket purchasing activities',
                                     toggle: {
                                         value: 'analytics',    
                                         enabled: false,
@@ -106,7 +106,7 @@ window.addEventListener('load', function(){
                                     
                                 }, {
                                     title: 'Advertisement and Targeting cookies',
-                                    description: 'Marketing cookies are used to create user profiles or to track the user on this website or across several websites for marketing purposes. These cookies may also be used for advertising purposes.<br/><br/><strong>Facebook Pixel (Meta Inc.)</strong> | Usage data, Marketing tracking<br/><br/><strong>TikTok Pixel (TikTok Technology Limited)</strong> | Usage data, Marketing tracking<br/><br/><strong>Youtube.com (Google Inc.)</strong> | Usage data of embed video views<br/><br/><strong>Vimeo.com (Vimeo Inc.)</strong> | Usage data of embed video views',
+                                    description: 'Marketing cookies are used to create user profiles or to track the user on this website or across several websites for marketing purposes. These cookies may also be used for advertising purposes.<br/>By not consenting to the use of Advertising and Targeting cookies, you may rvisualize content that does not take into account your personal interests or user profile.<br/><br/><strong>Facebook Pixel (Meta Inc.)</strong> | Usage data, Marketing tracking<br/><br/><strong>TikTok Pixel (TikTok Technology Limited)</strong> | Usage data, Marketing tracking<br/><br/><strong>Youtube.com (Google Inc.)</strong> | Usage data of embed video views<br/><br/><strong>Vimeo.com (Vimeo Inc.)</strong> | Usage data of embed video views',
                                     toggle: {
                                         value: 'targeting',
                                         enabled: false,
@@ -121,8 +121,8 @@ window.addEventListener('load', function(){
                     },
 					                    'it': {
                         consent_modal: {
-                            title: 'Le tue preferenze sulla privacy',
-                            description: 'Utilizziamo i cookie e altre tecnologie di tracciamento per migliorare la tua esperienza di navigazione sul nostro sito web per i seguenti scopi: misurare il tuo interesse per i nostri prodotti e servizi e personalizzare le interazioni di marketing. Per saperne di più o per rinunciare, leggi la nostra <a href="https://www.locarnofestival.ch/LFF/extra/cookie-policy.html">Politica dei cookie</a> e l\'<a href="https://www.locarnofestival.ch/LFF/extra/privacy-policy.html">Informativa sulla privacy</a>. <br/><br/>Puoi cambiare le tue preferenze sulla privacy: <button type="button" data-cc="c-settings" class="cc-link">configura preferenze</button>',
+                            title: 'Preferenze privacy',
+                            description: 'Questo sito utilizza cookie essenziali per il suo funzionamento e cookie di tracciamento per migliorare l\'esperienza. I cookie di tracciamento saranno attivati solo con il tuo consenso. Per saperne di più o per rinunciare, leggi la nostra <a href="https://www.locarnofestival.ch/LFF/extra/cookie-policy.html">Politica dei cookie</a> e l\'<a href="https://www.locarnofestival.ch/LFF/extra/privacy-policy.html">Informativa sulla privacy</a>. <br/><br/>Puoi cambiare le tue preferenze sulla privacy: <button type="button" data-cc="c-settings" class="cc-link">configura preferenze</button>',
                             primary_btn: {
                                 text: 'Accetta tutto',
                                 role: 'accept_all'              
@@ -154,7 +154,7 @@ window.addEventListener('load', function(){
                                     }
                                 }, {
                                     title: 'Cookies di performance e analisi',
-                                    description: 'I cookies di analisi ci aiutano a capire come i visitatori interagiscono con il nostro sito web raccogliendo e riportando informazioni in forma anonima.<br/><br/><strong>Google Tag Manager (Google Inc.)</strong> | Dati di utilizzo<br/><br/><strong>Google Analytics (Google Inc.)</strong> | Dati di utilizzo<br/><br/><strong>Smeetz.com (Smeetz SA)</strong> | Dati di utilizzo, acquisto biglietti',
+                                    description: 'I cookies di analisi ci aiutano a capire come i visitatori interagiscono con il nostro sito web raccogliendo e riportando informazioni in forma anonima.<br/>Non acconsentendo all\'utilizzo dei cookie di Performance e Analisi, alcune funzioni del sito potrebbero non funzionare correttamente.<br/><br/><strong>Google Tag Manager (Google Inc.)</strong> | Dati di utilizzo<br/><br/><strong>Google Analytics (Google Inc.)</strong> | Dati di utilizzo<br/><br/><strong>Smeetz.com (Smeetz SA)</strong> | Dati di utilizzo, acquisto biglietti',
                                     toggle: {
                                         value: 'analytics',     
                                         enabled: false,
@@ -163,7 +163,7 @@ window.addEventListener('load', function(){
                                     
                                 }, {
                                     title: 'Cookies di marketing',
-                                    description: 'I cookies di marketing sono utilizzati per creare profili utente o per tracciare l\'utente su questo sito web o su diversi siti web per scopi di marketing. Questi fornitori possono anche essere utilizzati per scopi pubblicitari.<br/><br/><strong>Facebook Pixel (Meta Inc.)</strong> | Dati di utilizzo, Tracking di marketing<br/><br/><strong>TikTok Pixel (TikTok Technology Limited)</strong> | Dati di utilizzo, Tracking di marketing<br/><br/>',
+                                    description: 'I cookies di marketing sono utilizzati per creare profili utente o per tracciare l\'utente su questo sito web o su diversi siti web per scopi di marketing. Questi fornitori possono anche essere utilizzati per scopi pubblicitari.<br/>Non acconsentendo all\'utilizzo dei cookie di Pubblicità e Targeting, potresti visualizzare contenuti che non tengono conto dei tuoi interessi personali o del tuo profilo utente.<br/><br/><strong>Facebook Pixel (Meta Inc.)</strong> | Dati di utilizzo, Tracking di marketing<br/><br/><strong>TikTok Pixel (TikTok Technology Limited)</strong> | Dati di utilizzo, Tracking di marketing<br/><br/>',
                                     toggle: {
                                         value: 'targeting',
                                         enabled: false,
