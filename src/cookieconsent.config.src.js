@@ -1,5 +1,5 @@
 const iframesYT = document.getElementsByTagName("iframe");
-const posterIFrameDisable=	"./cc_consent/iframe.disabled.svg";
+const posterIFrameDisable=	"https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/iframe.disabled.svg";
 var cc; var gtmloaded=pixelloaded=false; 
 	
 disableIframes=function() {
