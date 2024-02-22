@@ -13,7 +13,7 @@ disableIframes=function() {
 	}	
 }
 
-disableIframes()
+disableIframes();
 
 window.addEventListener('load', function(){
 
@@ -34,10 +34,10 @@ window.addEventListener('load', function(){
 				remove_cookie_tables: true,
                 hide_from_bots: true,                   
                 
-                cookie_name: 'lff_cc_cookie',              
+                cookie_name: 'lff_cc_cookie_24',              
                 cookie_expiration: 90,                 // default: 182 (days)
                 cookie_necessary_only_expiration: 182,   // default: disabled
-				revision: 4,                            // default: 0
+				revision: 5,                            // default: 0
                 // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
                // cookie_domain: location.hostname,       // default: current domain
                 // cookie_path: '/',                       // default: root
@@ -200,15 +200,50 @@ window.addEventListener('load', function(){
 
 
 
+window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500,
+  });
+  dataLayer.push({'gtm.start': new Date().getTime(), 'event': 'gtm.js'});
+  
 
-
-loadGTM = function(){
+loadGTM = function(mode){
 	if (!gtmloaded) {
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-								new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-								j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-								'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-								})(window,document,'script','dataLayer','GTM-N47WHX2');
+		localStorage.setItem("consentGranted", "true");
+		function gtag() { dataLayer.push(arguments); }
+		
+		
+		if (mode=='full') {
+			gtag('consent', 'update', {
+			ad_user_data: 'granted',
+			ad_personalization: 'granted',
+			ad_storage: 'granted',
+			analytics_storage: 'granted'
+		  });
+		}
+		
+		if (mode=='analytics') {
+			gtag('consent', 'update', {
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			ad_storage: 'denied',
+			analytics_storage: 'granted'
+		  });
+		}
+		
+		 var gtmScript = document.createElement('script');
+  gtmScript.async = true;
+  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N47WHX2';
+
+  var firstScript = document.getElementsByTagName('script')[0];
+  firstScript.parentNode.insertBefore(gtmScript,firstScript);
+		
+
 	gtmloaded=true;
 	}
 }
@@ -287,7 +322,12 @@ pixelloaded=true;
 					}
 					
 			if (loadAccepted.includes('analytics')) {
-						loadGTM(); 			
+				if (loadAccepted.includes('targeting')) {
+						loadGTM('full');
+				} else {
+						loadGTM('analytics');
+				}
+				
 			} else {
 						clearCookiesAnalytics()
 			}
