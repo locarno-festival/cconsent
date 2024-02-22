@@ -227,6 +227,17 @@ loadGTM = function(mode){
 		  });
 		}
 		
+		if (mode=='adonly') {
+			gtag('consent', 'update', {
+			ad_user_data: 'granted',
+			ad_personalization: 'granted',
+			ad_storage: 'granted',
+			analytics_storage: 'denied'
+		  });
+		}
+		
+		
+		
 		if (mode=='analytics') {
 			gtag('consent', 'update', {
 			ad_user_data: 'denied',
@@ -316,6 +327,12 @@ pixelloaded=true;
 			if (loadAccepted.includes('targeting')) {
 						iframeEnable(); 	
 						loadPixels();
+						
+						if (loadAccepted.includes('analytics')) {
+						} else {
+							loadGTM('adonly');
+						}
+						
 					} else {
 						clearCookiesTracking()
 						disableIframes()
