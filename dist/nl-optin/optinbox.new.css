@@ -4,9 +4,7 @@
 	    bottom: 0;
 		margin: 24px;
         color: #000 !important;
-
 	    z-index: 1000;
-
 	}
 
 	#LFF-Optin-form p {
@@ -88,11 +86,6 @@
 		
 	}
 
-
-
-	#LFF-Optin-form .subscribe-form {
-	    display: none;
-	}
 
 
 	#LFF-Optin-form .btn.button-medium-icon-right {
@@ -258,7 +251,7 @@
             height: 100%;
             top: 0px;
             left: 0px;
-            z-index: 100;
+            z-index: 1000;
 		}
 		h6.h-6 {
 			width: 85%;

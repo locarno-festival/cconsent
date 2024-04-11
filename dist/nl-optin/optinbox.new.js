@@ -6,9 +6,19 @@ var listid="9ced898a81";
 
 	setupOptInBox=function() {
 	
+	formObj= $('#signup-form-en');
+	
 	$('#fLang').val(document.documentElement.lang);
 	
-	if (document.documentElement.lang=='it') listid="447feadeb6";
+	if (document.documentElement.lang=='it') 
+	{
+		listid="447feadeb6";
+		formObj= $('#signup-form-it');
+		$('.subscribe-form h6.it, #signup-form-it').removeClass('d-none');
+		$('.subscribe-form h6.en, #signup-form-en').addClass('d-none');
+		
+	}
+		
 	
 	$('#listId').val(listid);
 	
@@ -16,7 +26,7 @@ var listid="9ced898a81";
 	
 	$('<link href="https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/nl-optin/optinbox.new.css" rel="stylesheet"/>').appendTo('head');
 	
-	getOptinShowed=Cookies.get('optin-nl') 
+	getOptinShowed=Cookies.get('optin-nl-24') 
 	
 
 	
@@ -24,19 +34,21 @@ var listid="9ced898a81";
 	optinOver=true
 	}, function() {
 	optinOver=false
-	if($(window).scrollTop() < optInstartY && optinshow) optinFHide()
 	})
+	
+	
+	//getOptinShowed = false;
 	
 	if (!getOptinShowed) {
 		
 	$('#LFF-Optin').addClass("d-block");
 	
-	$('#signup-form').on('submit',function(e) {
+	formObj.on('submit',function(e) {
 		e.preventDefault;
-		$('#signup-form').attr('action','https://locarnofestival.us19.list-manage.com/subscribe/post')
-		$('#signup-form').unbind('submit')
-		$('#signup-form').submit();
-		Cookies.set('optin-nl', 'true', { expires: 60 })
+		formObj.attr('action','https://locarnofestival.us19.list-manage.com/subscribe/post')
+		formObj.unbind('submit')
+		formObj.submit();
+		Cookies.set('optin-nl-24', 'true', { expires: 60 })
 		optinFHide()
 		nomoreOptin=true
 		return false;
@@ -58,45 +70,29 @@ var listid="9ced898a81";
 		maxShowCount=1;
 	}
 	
-	console.log(optInstartY,optInMaxY,actScrolling);
+		console.log(optInstartY,optInMaxY,actScrolling,optinshow);
 	
-	if($(window).scrollTop() >= optInstartY && actScrolling < optInMaxY && !optinshow) {
+	if(!optinshow) {
 		optinFShow();
-		console.log('nl show')
+		
 	}
 	
-	var prevscrollVal=actScrolling;
 	
-	$(window).scroll(function() {
-		if (!optinOver && !nomoreOptin) {
-		
-		let actScrolling=window.innerHeight + window.scrollY;
-		let scrollUp=false;
-		
-		if (actScrolling<prevscrollVal) scrollUp=true
-		prevscrollVal=actScrolling
-		
-		if(!scrollUp && $(window).scrollTop() >= optInstartY && actScrolling < optInMaxY && !optinshow) {
-			optinFShow()
-			
-		}
-	  
-	  }
-}); 
+	
 		}
 	}
 	
 	optinRemove=function() {
 		nomoreOptin=true
 		optinFHide()
-		Cookies.set('optin-nl', 'true', { expires: 4 })
+		Cookies.set('optin-nl-24', 'true', { expires: 4 })
 		$('.newsletter-bg').css('display','none');
 	}
 	
 	optinFShow=function() {
 	optinshow=true;
-
-	if(optinShowCount<maxShowCount) {
+	
+	//if(optinShowCount<maxShowCount) {
 		
 	if (optinmobile) {
 		$('.newsletter-bg').css('display','block'); 	
@@ -106,13 +102,13 @@ var listid="9ced898a81";
 		});
 	}
 	
-	$("#LFF-Optin-form").delay(200).show();
-	$(".subscribe-form").delay(400).fadeIn(100);
+	//console.log('nl 24 show');
+	$('#LFF-Optin-form').css('display','block');
 	
 	optinShowCount++;
-	} else {
-	nomoreOptin=true
-	}
+	//} else {
+	//nomoreOptin=true
+	//}
 	}
 	
 	optinFHide=function() {
@@ -122,7 +118,5 @@ var listid="9ced898a81";
 				$('body,html').removeClass('overflow-hidden');
 			}
 		$(".subscribe-form").fadeOut(200);
-			$("#LFF-Optin-form").delay(100).hide('slide',{
-				direction : 'right' }, function() {
-			})
+			$("#LFF-Optin-form").delay(100).hide()
 	}
