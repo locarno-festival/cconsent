@@ -10,12 +10,11 @@ var listid="9ced898a81";
 	
 	if (document.documentElement.lang=='it') listid="447feadeb6";
 	
-	//console.log(listid,document.documentElement.lang);
 	$('#listId').val(listid);
 	
 	if (window.innerWidth<=576) optinmobile=true;
 	
-	//$('<link href="https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/nl-optin/optinbox.css" rel="stylesheet"/>').appendTo('head');
+	$('<link href="https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/nl-optin/optinbox.new.css" rel="stylesheet"/>').appendTo('head');
 	
 	getOptinShowed=Cookies.get('optin-nl') 
 	
@@ -34,7 +33,6 @@ var listid="9ced898a81";
 	
 	$('#signup-form').on('submit',function(e) {
 		e.preventDefault;
-		//console.log('triggered')
 		$('#signup-form').attr('action','https://locarnofestival.us19.list-manage.com/subscribe/post')
 		$('#signup-form').unbind('submit')
 		$('#signup-form').submit();
@@ -83,13 +81,6 @@ var listid="9ced898a81";
 			
 		}
 	  
-	  
-		  if(($(window).scrollTop() < optInstartY && optinshow) || ((actScrolling >= optInMaxY) && optinshow)) {
-				//optinFHide()
-				
-				//if (actScrolling >= optInMaxY) nomoreOptin=true
-				
-		  }
 	  }
 }); 
 		}
@@ -117,10 +108,7 @@ var listid="9ced898a81";
 	
 	$("#LFF-Optin-form").delay(200).show();
 	$(".subscribe-form").delay(400).fadeIn(100);
-	//$("#LFF-Optin-form").delay(200).show('slide',{
-    //    direction : 'right' }, function() {
-		//	$(".subscribe-form").delay(200).fadeIn(300)
-			//})
+	
 	optinShowCount++;
 	} else {
 	nomoreOptin=true
@@ -138,4 +126,3 @@ var listid="9ced898a81";
 				direction : 'right' }, function() {
 			})
 	}
-
