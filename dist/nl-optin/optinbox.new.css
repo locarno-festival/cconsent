@@ -15,11 +15,11 @@
 	    margin-bottom:16px;
 	}
 
-    .input-box {
+    #LFF-Optin .input-box {
         width: 48%;
     }
 
-	.input-flex {
+	#LFF-Optin .input-flex {
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
@@ -86,6 +86,10 @@
 		
 	}
 
+	.subscribe-form .h6.it {
+		display: none;
+		
+	}
 
 
 	#LFF-Optin-form .btn.button-medium-icon-right {
