@@ -1,0 +1,261 @@
+/******************************************************
+* #### jQuery-Youtube-Channels-Playlist v7.0 ####
+* Coded by Ican Bachors 2014.
+* https://github.com/bachors/jQuery-Youtube-Channels-Playlist
+* Updates will be posted to this site.
+******************************************************/
+
+.yt-playlist-container {
+    display:none;
+    padding-bottom:32px;
+}
+
+.yt-playlist {
+     position:relative!important;
+     width:97.8%!important;
+     margin: 0 auto;
+}
+
+.ycp {
+ color: #444;
+ background: #000;
+ display: block;
+ width: 100%;
+ height: 700px;
+ 
+ box-shadow: 0 4px 4px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.ycp,
+.ycp .belah {
+ box-sizing: border-box;
+ padding: 0;
+ margin: 0 0 25px 0 !important;
+}
+
+.ycp .belah {
+ display: inline-block;
+ vertical-align: top;
+ height: 100%;
+}
+
+
+
+
+
+.ycp .belah.player {
+ width: 65%;
+}
+
+
+.live-only .ycp .belah.player {
+ width: 100%;
+}
+
+.ycp .belah.list {
+ float:right;
+ width: 33.8%;
+}
+
+.ycp .belah .luhur {
+ color: #fff;
+ background: #222;
+ display: block;
+ width: 100%;
+ height: 70px;
+ box-sizing: border-box;
+ padding: 10px;
+ margin: 0;
+}
+
+.ycp .belah .handap {
+ color: #ddd;
+ background: #111;
+ height: calc(100% - 70px);
+ padding: 0;
+ overflow-y: auto;
+ -moz-box-shadow: inset 0 0 10px #000;
+ -webkit-box-shadow: inset 0 0 10px #000;
+ box-shadow: inset 0 0 10px #000;
+}
+
+.ycp .belah .handap,
+.ycp .belah .bingkay {
+ display: block;
+ width: 100%;
+ height: 100%;
+ box-sizing: border-box;
+ margin: 0;
+}
+
+.ycp .belah .bingkay {
+ height: 100%;
+ border: 0;
+}
+
+.ycp .belah .luhur span.tombol {
+ margin-right: 20px;
+ color: silver;
+}
+
+.ycp .belah .luhur span.about {
+ float: right;
+ background: #111;
+ padding: 2px;
+ border-radius: 50%;
+ width: 20px;
+ height: 20px;
+ text-align: center;
+}
+
+.ycp a {
+ text-decoration: none;
+ outline: 0;
+}
+
+.ycp a img {
+ border: 0;
+}
+
+.ycp .belah.ycp_vid_play {
+ cursor: pointer;
+ background-position:center center!important;
+ background-size:100% auto!important;
+}
+
+.ycp .belah.ycp_vid_play a {
+ background: #fff200;
+ width: 75px;
+ height: 75px;
+ display: block;
+ border-radius: 100%;
+ position: relative;
+ top: calc(50% - 35px);
+ left: calc(50% - 60px);
+ text-align: center;
+}
+
+.ycp .belah.ycp_vid_play a::before {
+ position: absolute;
+font-size: 46px;
+top: 5px;
+left: 20px;
+content:"\25B6";
+ color: #222;
+}
+
+.ycp .belah .thumb {
+ float: left;
+ margin-right: 9px;
+ position: relative;
+ height: 81px;
+}
+
+.ycp .belah .thumb span {
+ position: absolute;
+ left: 2px;
+ bottom: -2px;
+ padding: 2px 4px 1px 4px;
+ background: #fff200;
+ color: black;
+ font-size: 12px;
+ /*font-size: .8em;*/
+}
+
+
+
+
+.ycp .belah .play {
+ margin: 0;
+ padding: 10px;
+ display: block;
+ overflow: hidden;
+ *overflow: visible;
+}
+
+.ycp .belah .luhur div.title {
+ color: #fff;
+ border-bottom: 1px solid #111;
+ padding-bottom: 5px;
+ margin-bottom: 5px;
+ font-family: 'Balance';
+ font-weight: 700;
+ font-size: 16px;
+ margin-bottom:3px!important;
+}
+
+.ycp .belah .handap div.title {
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+ font-weight: 700;
+ font-size: 16px;
+ margin-bottom:3px!important;
+}
+
+.ycp .belah span.mute,
+.ycp .belah span.about a {
+ color: #767676;
+ line-height:0.8em;
+ font-size:13px;
+}
+
+.ycp .belah span.mute {
+ display:inline;
+ width:50%;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+}
+
+.ycp .belah .thumb img {
+ width: 130px;
+ height: 100%;
+ border: 0px;
+ background-size: cover;
+ 
+}
+
+.ycp .belah .play:hover,
+.ycp .belah .vid-active {
+ background: #333;
+}
+
+.ycp .belah .luhur .vid-prev,
+.ycp .belah .luhur .vid-next,
+.ycp .belah .play {
+ cursor: pointer;
+}
+
+@media screen and (max-width:991px) {
+ .ycp {
+     height: 600px;
+ }
+
+ .ycp .belah,
+ .ycp .belah:first-of-type,
+ .ycp .belah:last-of-type {
+     width: 100%;
+     display: block;
+ }
+
+ .ycp .belah:first-of-type {
+     height: 50%;
+ }
+
+ .ycp .belah:last-of-type {
+     height: 50%;
+ }
+ 
+ 
+ .live-only .ycp {
+     height: 420px;
+ }
+ 
+ .live-only .ycp .belah:first-of-type {
+ height: 100%;
+}
+ 
+ 
+ 
+}
