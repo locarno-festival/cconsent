@@ -180,7 +180,7 @@ window.addEventListener('load', function(){
             ,
 			gui_options: {
 			consent_modal: {
-            layout: 'cloud',               
+            layout: 'bar',               
             position: 'bottom center',    
             transition: 'slide',           
             swap_buttons: false          
@@ -322,7 +322,16 @@ pixelloaded=true;
 	loadExtTracking = function() {
 		
 			loadAccepted=cc.getUserPreferences().accepted_categories;
-			console.log(cc.getUserPreferences().accepted_categories)
+			//console.log(cc.getUserPreferences().accepted_categories)
+			
+			if ($('#LFF-Optin').length>0) {
+				$.getScript( "https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/nl-optin/optinbox.new.js", function() {    
+					setupOptInBox();
+				})
+				
+			//console.log('NL Optin')
+			}
+			
 			
 			if (loadAccepted.includes('targeting')) {
 						iframeEnable(); 	

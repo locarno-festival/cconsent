@@ -27,7 +27,7 @@
     --cc-section-border: #fff200;
     --cc-cookie-table-border: #e9edf2;
     --cc-overlay-bg: rgb(4, 6, 8);
-    --cc-overlay-opacity: .80;
+    --cc-overlay-opacity: .60;
     --cc-consent-modal-box-shadow: 0 0.625rem 1.875rem rgba(2, 2, 3, 0.28);
     --cc-webkit-scrollbar-bg: #000;
     --cc-webkit-scrollbar-bg-hover: #fff780;
@@ -538,6 +538,7 @@ CookieConsent settings modal
 #s-bns button:first-child{
     color: var(--cc-btn-primary-text);
     background: var(--cc-btn-primary-bg);
+	margin-right:1rem;
 }
 
 #c-bns.swap button:first-child{
@@ -1042,7 +1043,7 @@ html.force--consent.show--consent body{
 }
 
 #cm.bar #c-inr{
-    max-width: 32em;
+    max-width: 1870px;
     margin: 0 auto;
 }
 
@@ -1270,7 +1271,7 @@ html.force--consent.show--consent body{
     }
 
     .bns-t #s-bns{
-        height: 10.5em;
+        height: 11.5em;
     }
 
     .cc_div .bns-t .c-bn{
@@ -1332,6 +1333,7 @@ html.force--consent.show--consent body{
     .cc_div .c-bn{
         width: 100%;
         margin-right: 0;
+		margin-bottom:0.5rem;
     }
 
     #s-cnt #s-rall-bn{
