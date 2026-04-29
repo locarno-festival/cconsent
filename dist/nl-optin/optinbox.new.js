@@ -51,7 +51,7 @@ var listid="9ced898a81";
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-				'origin': 'https://locarnofestival.ch/'
+				'origin': 'https://locarnofestival.ch'
             },
             body: JSON.stringify({
                 first_name: $('#fName').val(),     
