@@ -44,8 +44,7 @@ var listid="9ced898a81";
 	$('#LFF-Optin').addClass("d-block");
 	
 	formObj.on('submit',function(e) {
-		console.log('Ciao sto facendo la function', e)
-		e.preventDefault;
+		e.preventDefault();
 		// ---------- HS FORM SUBMISSION -----------
         fetch('https://hs-subscription.azurewebsites.net/api/form-submission', {
             method: 'POST',
@@ -61,11 +60,7 @@ var listid="9ced898a81";
             })
         })
         .then(function(res) {
-            if (!res.ok) {
-				console.log('Test res', res);
-				throw new Error(res.statusText);
-			} 
-			console.log('Test res.json', res.json());
+            if (!res.ok) throw new Error(res.statusText);
             return res.json();
         })
         .then(function(data) {
