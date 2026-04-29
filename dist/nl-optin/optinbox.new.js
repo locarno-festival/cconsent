@@ -59,7 +59,11 @@ var listid="9ced898a81";
             })
         })
         .then(function(res) {
-            if (!res.ok) throw new Error(res.statusText);
+            if (!res.ok) {
+				console.log('Test res', res);
+				throw new Error(res.statusText);
+			} 
+			console.log('Test res.json', res.json());
             return res.json();
         })
         .then(function(data) {
