@@ -44,35 +44,11 @@ var listid="9ced898a81";
 	$('#LFF-Optin').addClass("d-block");
 	
 	formObj.on('submit',function(e) {
+		console.log('Ciao sto facendo la function', e)
 		e.preventDefault;
-		// ---------- HS FORM SUBMISSION -----------
-        fetch('https://hs-subscription.azurewebsites.net/api/form-submission', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                first_name: $('#fName').val(),     
-                last_name: $('#lName').val(),      
-                email: $('#mail').val(),   
-                subscriptions: 'default',  
-            })
-        })
-        .then(function(res) {
-            if (!res.ok) {
-				console.log('Test res', res);
-				throw new Error(res.statusText);
-			} 
-			console.log('Test res.json', res.json());
-            return res.json();
-        })
-        .then(function(data) {
-            console.log('Successfully sent to HS', data);
-        })
-        .catch(function(err) {
-			console.log('Something went wrong while subscribing', err.message)
-        })
-        // ---------- HS FORM SUBMISSION -----------
+		formObj.attr('action','https://locarnofestival.us19.list-manage.com/subscribe/post')
+		formObj.unbind('submit')
+		formObj.submit();
 		Cookies.set('optin-nl-24', 'true', { expires: 60 })
 		optinFHide()
 		nomoreOptin=true
