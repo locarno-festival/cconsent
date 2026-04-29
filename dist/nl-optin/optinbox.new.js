@@ -51,6 +51,7 @@ var listid="9ced898a81";
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+				'origin': 'https://locarnofestival.ch/'
             },
             body: JSON.stringify({
                 first_name: $('#fName').val(),     
@@ -69,6 +70,7 @@ var listid="9ced898a81";
         })
         .then(function(data) {
             console.log('Successfully sent to HS', data);
+			window.location.href = 'https://www.locarnofestival.ch/extra/newsletter-signup/subscription-confirmed';
         })
         .catch(function(err) {
 			console.log('Something went wrong while subscribing', err.message)
