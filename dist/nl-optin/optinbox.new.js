@@ -65,15 +65,16 @@ var listid="9ced898a81";
         })
         .then(function(data) {
             console.log('Successfully sent to HS', data);
+			Cookies.set('optin-nl-24', 'true', { expires: 60 })
+			optinFHide()
+			nomoreOptin=true
 			window.location.href = 'https://www.locarnofestival.ch/extra/newsletter-signup/subscription-confirmed';
         })
         .catch(function(err) {
 			console.log('Something went wrong while subscribing', err.message)
         })
         // ---------- HS FORM SUBMISSION -----------
-		Cookies.set('optin-nl-24', 'true', { expires: 60 })
-		optinFHide()
-		nomoreOptin=true
+
 		return false;
 	})
 
