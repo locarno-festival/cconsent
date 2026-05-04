@@ -3,6 +3,7 @@ var optinShowCount=0
 var maxShowCount=2
 var optinmobile=false;
 var listid="9ced898a81";
+var setOptinAction = false;
 
 	setupOptInBox=function() {
 	
@@ -37,9 +38,9 @@ var listid="9ced898a81";
 	})
 	
 	
-	//getOptinShowed = false;
 	
-	if (!getOptinShowed) {
+	
+	if (!setOptinAction) {
 		
 	$('#LFF-Optin').addClass("d-block");
 	
@@ -77,6 +78,7 @@ var listid="9ced898a81";
         })
         // ---------- HS FORM SUBMISSION -----------
 
+		setOptinAction = true;
 		return false;
 	})
 
