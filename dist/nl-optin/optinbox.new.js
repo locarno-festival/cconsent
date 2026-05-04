@@ -96,7 +96,7 @@ var listid="9ced898a81";
 		maxShowCount=1;
 	}
 	
-		console.log(optInstartY,optInMaxY,actScrolling,optinshow);
+		//console.log(optInstartY,optInMaxY,actScrolling,optinshow);
 	
 	if(!optinshow) {
 		optinFShow();
