@@ -28,13 +28,13 @@ var setOptinAction = false;
 	$('<link href="https://cdn.jsdelivr.net/gh/locarno-festival/cconsent/dist/nl-optin/optinbox.new.css" rel="stylesheet"/>').appendTo('head');
 	
 	getOptinShowed=Cookies.get('optin-nl-24') 
-	
+	optinshow = getOptinShowed;
 
 	
 	$('#LFF-Optin-form').hover(function() {
-	optinOver=true
+		optinOver=true
 	}, function() {
-	optinOver=false
+		optinOver=false
 	})
 	
 	
