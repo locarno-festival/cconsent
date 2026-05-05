@@ -44,7 +44,7 @@ var setOptinAction = false;
 		
 	$('#LFF-Optin').addClass("d-block");
 	
-	if (!formObj.hasClass("hs--setup")) {}
+	if (!formObj.hasClass("hs--setup")) {
 		formObj.addClass("hs--setup");
 		formObj.on('submit',function(e) {
 			e.preventDefault();
