@@ -44,43 +44,46 @@ var setOptinAction = false;
 		
 	$('#LFF-Optin').addClass("d-block");
 	
-	formObj.on('submit',function(e) {
-		e.preventDefault();
-		// ---------- HS FORM SUBMISSION -----------
-        fetch('https://hs-subscription.azurewebsites.net/api/form-submission', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-				'origin': 'https://locarnofestival.ch'
-            },
-            body: JSON.stringify({
-                first_name: $('#fName').val(),     
-                last_name: $('#lName').val(),      
-                email: $('#mail').val(),   
-                subscriptions: 'default',  
-            })
-        })
-        .then(function(res) {
-            if (!res.ok) throw new Error(res.statusText);
-            return res.json();
-        })
-        .then(function(data) {
-            console.log('Successfully sent to HS', data);
-			Cookies.set('optin-nl-24', 'true', { expires: 60 })
-			optinFHide()
-			nomoreOptin=true
-			setTimeout(function() {
-				window.location.href = 'https://www.locarnofestival.ch/extra/newsletter-signup/subscription-confirmed';
-			}, 100);
-        })
-        .catch(function(err) {
-			console.log('Something went wrong while subscribing', err.message)
-        })
-        // ---------- HS FORM SUBMISSION -----------
+	if (!formObj.hasClass("hs--setup")) {}
+		formObj.addClass("hs--setup");
+		formObj.on('submit',function(e) {
+			e.preventDefault();
+			// ---------- HS FORM SUBMISSION -----------
+			fetch('https://hs-subscription.azurewebsites.net/api/form-submission', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'origin': 'https://locarnofestival.ch'
+				},
+				body: JSON.stringify({
+					first_name: $('#fName').val(),     
+					last_name: $('#lName').val(),      
+					email: $('#mail').val(),   
+					subscriptions: 'default',  
+				})
+			})
+			.then(function(res) {
+				if (!res.ok) throw new Error(res.statusText);
+				return res.json();
+			})
+			.then(function(data) {
+				console.log('Successfully sent to HS', data);
+				Cookies.set('optin-nl-24', 'true', { expires: 60 })
+				optinFHide()
+				nomoreOptin=true
+				setTimeout(function() {
+					window.location.href = 'https://www.locarnofestival.ch/extra/newsletter-signup/subscription-confirmed';
+				}, 100);
+			})
+			.catch(function(err) {
+				console.log('Something went wrong while subscribing', err.message)
+			})
+			// ---------- HS FORM SUBMISSION -----------
 
-		setOptinAction = true;
-		return false;
-	})
+			setOptinAction = true;
+			return false;
+		})
+	}
 
 		
 	optInstartY=window.innerHeight - parseInt(window.innerHeight/4)
